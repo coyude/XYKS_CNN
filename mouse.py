@@ -15,7 +15,7 @@ def less(start_x, start_y, size):
     mouse.press(Button.left)
     time.sleep(0.01)
     mouse.move(size, size)
-    time.sleep(0.01)
+    time.sleep(0.05)
     mouse.release(Button.left)
     time.sleep(0.6)
 
@@ -32,7 +32,7 @@ def greater(start_x, start_y, size):
     mouse.press(Button.left)
     time.sleep(0.01)
     mouse.move(-size, size)
-    time.sleep(0.01)
+    time.sleep(0.05)
     mouse.release(Button.left)
     time.sleep(0.6)
 
