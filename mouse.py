@@ -8,7 +8,7 @@ def less(start_x, start_y, size):
     pyautogui.mouseDown()
     pyautogui.moveRel(size, size, duration=0)
     pyautogui.mouseUp()
-    time.sleep(0.38)
+    time.sleep(0.4)
 
 
 def greater(start_x, start_y, size):
@@ -19,4 +19,4 @@ def greater(start_x, start_y, size):
     pyautogui.mouseDown()
     pyautogui.moveRel(-size, size, duration=0)
     pyautogui.mouseUp()
-    time.sleep(0.38)
+    time.sleep(0.4)
