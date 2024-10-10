@@ -68,7 +68,7 @@ def predict_digit(image):
 
 
 
-def predict(screenshot_pil, padding=7):
+def predict(screenshot_pil, padding=5):
     screenshot = cv2.cvtColor(np.array(screenshot_pil), cv2.COLOR_RGB2BGR)
 
     gray = cv2.cvtColor(screenshot, cv2.COLOR_BGR2GRAY)
@@ -80,7 +80,7 @@ def predict(screenshot_pil, padding=7):
                                    cv2.THRESH_BINARY_INV, 11, 2)
 
  
-    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
     thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel, iterations=1)
 
   
@@ -136,7 +136,7 @@ def predict(screenshot_pil, padding=7):
 
     return predictions
 
-for i in range(30):
+for i in range(40):
     region1 = (786, 332, 128,128)
     region2 = (1020,334,128,128)
   
