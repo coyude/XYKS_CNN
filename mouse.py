@@ -1,22 +1,40 @@
-import pyautogui
+from pynput.mouse import Button, Controller
 import time
+
+mouse = Controller()
+
 def less(start_x, start_y, size):
-    pyautogui.moveTo(start_x, start_y, duration=0)
-    pyautogui.mouseDown()
-    pyautogui.moveRel(-size, size, duration=0)
-    pyautogui.mouseUp()
-    pyautogui.mouseDown()
-    pyautogui.moveRel(size, size, duration=0)
-    pyautogui.mouseUp()
-    time.sleep(0.4)
+    mouse.position = (start_x, start_y)
+    time.sleep(0.01)  
+    mouse.press(Button.left)
+    time.sleep(0.01)
+    mouse.move(-size, size)
+    time.sleep(0.01)
+    mouse.release(Button.left)
+    time.sleep(0.01)
+    mouse.press(Button.left)
+    time.sleep(0.01)
+    mouse.move(size, size)
+    time.sleep(0.01)
+    mouse.release(Button.left)
+    time.sleep(0.6)
 
 
 def greater(start_x, start_y, size):
-    pyautogui.moveTo(start_x, start_y, duration=0)
-    pyautogui.mouseDown()
-    pyautogui.moveRel(size, size, duration=0)
-    pyautogui.mouseUp()
-    pyautogui.mouseDown()
-    pyautogui.moveRel(-size, size, duration=0)
-    pyautogui.mouseUp()
-    time.sleep(0.4)
+    mouse.position = (start_x, start_y)
+    time.sleep(0.01)
+    mouse.press(Button.left)
+    time.sleep(0.01)
+    mouse.move(size, size)
+    time.sleep(0.01)
+    mouse.release(Button.left)
+    time.sleep(0.01)
+    mouse.press(Button.left)
+    time.sleep(0.01)
+    mouse.move(-size, size)
+    time.sleep(0.01)
+    mouse.release(Button.left)
+    time.sleep(0.6)
+
+
+
