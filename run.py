@@ -81,7 +81,7 @@ def predict(screenshot_pil, padding=5):
 
  
     kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
-    thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel, iterations=1)
+    thresh = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel, iterations=2)
 
   
     contours, _ = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
